@@ -14,15 +14,14 @@
 	#container {
 		margin: 0 auto;
 		width: 700px;
-/*		display: table-row;*/
 	}
 
-	#content > div {
+/*	#content > div {
 		display: table-cell;
 		width: 50%;
 		margin: 1em;
 		padding: 1em;
-	}
+	}*/
 	h1 { 
 		font-size: 3.8em; 
 		color: #000; 
@@ -31,95 +30,52 @@
 	h1 .small { font-size: 0.4em; }
 	h1 a { text-decoration: none }
 	h2 { font-size: 1.5em; color: #000; }
-	h3 { color: #000; }
-	a { color: #000; }
 	pre { background: #000; color: silver; padding: 15px;}
 	hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
 
-/* default css */
-table {
-  font-size: 1em;
-  line-height: inherit;
-  border-collapse: collapse;
-}
-
-tr {
-  
+tr {  
   text-align: left;
-  
 }
 
-div, address, ol, ul, li, option, select {
-  margin-top: 0px;
-  margin-bottom: 0px;
+h3 + p {
+	margin-top: 0.3em;
 }
-
-p {
-  margin: 0px;
-}
-
-pre {
-  font-family: Courier New;
-  white-space: pre-wrap;
-  margin:0;
-}
-
-body {
-  margin: 6px;
-  padding: 0px;
-  font-family: Verdana, sans-serif;
-  font-size: 10pt;
-  background-color: #ffffff;
-  color: #000;
-}
-
-img {
-  -moz-force-broken-image-icon: 1;
-}
-
-h6 { font-size: 8pt }
-h5 { font-size: 8pt }
-h4 { font-size: 10pt }
-h3 { font-size: 12pt }
-h2 { font-size: 14pt }
-h1 { font-size: 18pt }
-
-blockquote {padding: 10px; border: 1px #DDD dashed }
 
 a img {border: 0}
 
-/* Ordered lists converted to numbered lists can preserve ordered types, and
-   vice versa. This is confusing, so disallow it */
-ul[type="i"], ul[type="I"], ul[type="1"], ul[type="a"], ul[type="A"] {
-  list-style-type: disc;
+#backlink {
+	float: left;
 }
 
-ol[type="disc"], ol[type="circle"], ol[type="square"] {
-  list-style-type: decimal;
+#contact {
+	float: right;
 }
-/* end default css */
 
-/* custom css */
-* {
-  font-family: "Times New Roman";
+table.leftright {
+	border: none;
+	width: 100%
 }
-h3 {
-  margin: 0;
-}
-h2 {
-  margin-bottom: 0;
-}
-/* end custom css */
 
-/* ui edited css */
-body {
-  font-family: Times New Roman;
-  
-  font-size: 10.0pt;
-  line-height: normal;
-  background-color: #ffffff;
+table.leftright td {
+	margin: 3px;
 }
-/* end ui edited css */
+table.leftright td:last-child {
+	text-align: right;
+}
+
+h3.leftright {
+	display: table-row;
+	width: 700px;/*Dependant on #container*/
+}
+
+h3.leftright > span {
+	display: table-cell;
+	width: 350px;/*Dependant on #container*/
+}
+
+h3.leftright > span:last-child {
+	text-align: right;
+}
 </style>
 
   
@@ -127,279 +83,76 @@ body {
 
 </head>
 
-<body>
-    
-    
-    
-<div style=FLOAT:right>
+<body> 
+
+<div id="backlink">
+<a href="/">&laquo; Back to Index</a>
+</div>
+
+<div id="container">
+
+<div id="contact">
   6904 Rix St. SE<br>
   Ada, MI 49301<br>
   Cell: 616.307.8364<br>
   Email: james.bliss@astro73.com
 </div>
-<h1>
-  James Bliss
-</h1>
-<h2>
-  Objective
-</h2>
-<p>
-  Finding work that will help support my education
-</p>
-<h2>
-  Education
-</h2>
-<table border=0 bordercolor=#000000 cellpadding=3 cellspacing=0 class=zeroBorder id=dxo1 width=100%>
-  <tbody>
+
+<h1>James Bliss</h1>
+<h2>Objective</h2>
+<p>Finding work that will help support my education</p>
+
+<h2>Education</h2>
+<table class="leftright">
   <tr>
-    <td>
-      Grand Rapids Community college
-    </td>
-    <td style=TEXT-ALIGN:right>
-      Spring 2010, Fall 2011
-    </td>
+    <td>Grand Rapids Community college</td>
+    <td>Spring 2010, Fall 2011</td>
   </tr>
   <tr>
-    <td>
-      Worcester Polytechnic Institute (Studied computer science)
-    </td>
-    <td style=TEXT-ALIGN:right>
-      2007 – 2009
-    </td>
+    <td>Worcester Polytechnic Institute (Studied computer science)</td>
+    <td>2007&ndash;2009</td>
   </tr>
   <tr>
-    <td>
-      Forest Hills Central High School
-    </td>
-    <td style=TEXT-ALIGN:right>
-      2003 – 2007
-    </td>
+    <td>Forest Hills Central High School</td>
+    <td>2003&ndash;2007</td>
   </tr>
-  </tbody>
 </table>
-<h2>
-  Work Experience
-</h2>
-<table border=0 bordercolor=#000000 cellpadding=3 cellspacing=0 class=zeroBorder id=pwdi width=100%>
-  <tbody>
-  <tr>
-    <td>
-      <h3>
-        <font size=3>RGIS: Retail Merchandiser</font>
-      </h3>
-    </td>
-    <td>
-      <h3 style=TEXT-ALIGN:right>
-        <font size=3>July 2011 – August 2011</font>
-      </h3>
-    </td>
-  </tr>
-  </tbody>
-</table>
-<p>
-  Remodeled both Family Dollar stores and Jo-Ann Fabric and Craft stores.
-</p>
-<table border=0 bordercolor=#000000 cellpadding=3 cellspacing=0 class=zeroBorder id=hn7g style="FONT-FAMILY:'Times New Roman'" width=100%>
-  <tbody style="FONT-FAMILY:'Times New Roman'">
-  <tr style="FONT-FAMILY:'Times New Roman';TEXT-ALIGN:left">
-    <td style="FONT-FAMILY:'Times New Roman'">
-      <h3 style="FONT-FAMILY:'Times New Roman'">
-        <font size=3>Boutique Week: Webmaster</font>
-      </h3>
-    </td>
-    <td style="FONT-FAMILY:'Times New Roman'">
-      <h3 style="FONT-FAMILY:'Times New Roman';TEXT-ALIGN:right">
-        <font size=3>January 2011 – Present</font>
-      </h3>
-    </td>
-  </tr>
-  </tbody>
-</table>
-<p style="FONT-FAMILY:'Times New Roman';MARGIN-LEFT:0px;MARGIN-RIGHT:0px">
-  Developing a brand-new website on a cloud platform to the client's specifications.
-</p>
-<table border=0 bordercolor=#000000 cellpadding=3 cellspacing=0 class=zeroBorder id=oemu style="FONT-FAMILY:'Times New Roman'" width=100%>
-  <tbody style="FONT-FAMILY:'Times New Roman'">
-  <tr style="FONT-FAMILY:'Times New Roman';TEXT-ALIGN:left">
-    <td style="FONT-FAMILY:'Times New Roman'">
-      <h3 style="FONT-FAMILY:'Times New Roman'">
-        <font size=3>Employment Group: Light Industrial Temp</font>
-      </h3>
-    </td>
-    <td style="FONT-FAMILY:'Times New Roman'">
-      <h3 style="FONT-FAMILY:'Times New Roman';TEXT-ALIGN:right">
-        <font size=3>October 2010 – Present</font>
-      </h3>
-    </td>
-  </tr>
-  </tbody>
-</table>
-<p style="FONT-FAMILY:'Times New Roman';MARGIN-LEFT:0px;MARGIN-RIGHT:0px">
-</p>
-<table border=0 bordercolor=#000000 cellpadding=3 cellspacing=0 class=zeroBorder id=p:vk width=100%>
-  <tbody>
-  <tr>
-    <td>
-      <h3>
-        Manpower: Access Business Group Temp
-      </h3>
-    </td>
-    <td>
-      <h3 style=TEXT-ALIGN:right>
-        July - August 2008, June – October 2009
-      </h3>
-    </td>
-  </tr>
-  </tbody>
-</table>
-<p>
-</p>
-<table border=0 bordercolor=#000000 cellpadding=3 cellspacing=0 class=zeroBorder id=xpck width=100%>
-  <tbody>
-  <tr>
-    <td>
-      <h3 style="FONT-FAMILY:'Times New Roman'">
-        <font size=3>WPI M.E. Department: Lab Monitor</font>
-      </h3>
-    </td>
-    <td>
-      <h3 style=TEXT-ALIGN:right>
-        September 2007&nbsp;<font size=3>–&nbsp;</font>April 2008
-      </h3>
-    </td>
-  </tr>
-  </tbody>
-</table>
-Attended a computer lab, alerted the appropriate people of problems, enforced rules, and ensured things ran smoothly.
-<p>
-</p>
-<h2>
-  Other Experience
-</h2>
-<table border=0 bordercolor=#000000 cellpadding=3 cellspacing=0 class=zeroBorder id=l64w width=100%>
-  <tbody>
-  <tr>
-    <td>
-      <h3 style="FONT-FAMILY:'Times New Roman'">
-        <font size=3>School: Theatre Crew</font>
-      </h3>
-    </td>
-    <td>
-      <h3 style="FONT-FAMILY:'Times New Roman';MARGIN-LEFT:0px;MARGIN-RIGHT:0px;TEXT-ALIGN:right">
-        <font face="'times new roman'" size=3>March – April 2008, October – November 2008</font>
-      </h3>
-    </td>
-  </tr>
-  </tbody>
-</table>
-<p>
-  Involved in the backstage work of two productions. Worked under the direction of the master carpenter in construction of set and as part of the run crew under the stage manager during the show.
-</p>
-<table border=0 bordercolor=#000000 cellpadding=3 cellspacing=0 class=zeroBorder id=f3lz style="FONT-FAMILY:'Times New Roman'" width=100%>
-  <tbody style="FONT-FAMILY:'Times New Roman'">
-  <tr style="FONT-FAMILY:'Times New Roman';TEXT-ALIGN:left">
-    <td style="FONT-FAMILY:'Times New Roman'">
-      <h3 style="FONT-FAMILY:'Times New Roman'">
-        <font face="'times new roman'" size=3>FIRST Robotics Competition: Robot Operator</font>
-      </h3>
-    </td>
-    <td style="FONT-FAMILY:'Times New Roman'">
-      <h3 style="FONT-FAMILY:'Times New Roman';TEXT-ALIGN:right">
-        <font face="'times new roman'" size=3>2007 Season</font>
-      </h3>
-    </td>
-  </tr>
-  </tbody>
-</table>
-<p>
-  The robot operator on team 904. Worked under stress, strategized in groups of about 6 to 9 on a changing basis, worked very closely with others.
-</p>
-<table border=0 bordercolor=#000000 cellpadding=3 cellspacing=0 class=zeroBorder id=xgni style="FONT-FAMILY:'Times New Roman'" width=100%>
-  <tbody style="FONT-FAMILY:'Times New Roman'">
-  <tr style="FONT-FAMILY:'Times New Roman';TEXT-ALIGN:left">
-    <td style="FONT-FAMILY:'Times New Roman'">
-      <h3 style="FONT-FAMILY:'Times New Roman'">
-        <font face="'times new roman'" size=3>FIRST Robotics Competition: Lead Programmer</font>
-      </h3>
-    </td>
-    <td style="FONT-FAMILY:'Times New Roman'">
-      <h3 style="FONT-FAMILY:'Times New Roman';TEXT-ALIGN:right">
-        <font face="'times new roman'" size=3>2004 – 2007 Seasons</font>
-      </h3>
-    </td>
-  </tr>
-  </tbody>
-</table>
-<p>
-  The sole programmer on teams 1227 (2004-2006) and 904 (2007). Involved embedded programming on a fairly restricted system under extreme time constraints.
-</p>
-<h2>
-  Personal References
-</h2>
-<table border=0 bordercolor=#000000 cellpadding=3 cellspacing=0 class=zeroBorder id=r3wr width=100%>
-  <tbody>
-  <tr>
-    <td width=50%>
-      <h3>
-        Tom Cooper
-      </h3>
-      (616) 363-8825 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;tcmb42@gmail.com<br>
-      823 4 Mile Rd.<br>
-      Plainfield Twp, MI 49505
-    </td>
-    <td width=50%>
-      <h3>
-        Kirk Hedlich
-      </h3>
-      (616) 787-0405&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;khedlich@comcast.net<br>
-      7575 Fulton St<br>
-      Ada Township, MI 49356
-    </td>
-  </tr>
-  </tbody>
-</table>
-<h2>
-  Projects
-</h2>
-<table border=0 bordercolor=#000000 cellpadding=3 cellspacing=0 class=zeroBorder id=rgao style="FONT-FAMILY:'Times New Roman'" width=100%>
-  <tbody style="FONT-FAMILY:'Times New Roman'">
-  <tr style="FONT-FAMILY:'Times New Roman';TEXT-ALIGN:left">
-    <td style="FONT-FAMILY:'Times New Roman'">
-      <h3 style="FONT-FAMILY:'Times New Roman'">
-        <font face="'times new roman'" size=3>CS 3431: Database Systems</font>
-      </h3>
-    </td>
-    <td style="FONT-FAMILY:'Times New Roman'">
-      <h3 style="FONT-FAMILY:'Times New Roman';TEXT-ALIGN:right">
-        <font face="'times new roman'" size=3>1 January – Febuary 2009</font>
-      </h3>
-    </td>
-  </tr>
-  </tbody>
-</table>
-<p>
-  Worked with two other people on a web application to handle room reservations for WPI clubs and groups. It was designed as if it were to be deployed. Major software used included Git, Python, PostgreSQL, and Apache.
-</p>
-<table border=0 bordercolor=#000000 cellpadding=3 cellspacing=0 class=zeroBorder id=q1wu style="FONT-FAMILY:'Times New Roman'" width=100%>
-  <tbody style="FONT-FAMILY:'Times New Roman'">
-  <tr style="FONT-FAMILY:'Times New Roman';TEXT-ALIGN:left">
-    <td style="FONT-FAMILY:'Times New Roman'">
-      <h3 style="FONT-FAMILY:'Times New Roman'">
-        <font face="'times new roman'" size=3>RBE 1001: Introduction to Robotics</font>
-      </h3>
-    </td>
-    <td style="FONT-FAMILY:'Times New Roman'">
-      <h3 style="FONT-FAMILY:'Times New Roman';TEXT-ALIGN:right">
-        <font face="'times new roman'" size=3>September</font><font size=3>&nbsp;– December 2007</font>
-      </h3>
-    </td>
-  </tr>
-  </tbody>
-</table>
-<p>
-  Working with two other people to build a small robot to compete against other teams à la FIRST Tech Challenge.
-</p>
-<p>
-</p>
-<br></body>
+
+<h2>Work Experience</h2>
+
+<h3 class="leftright"><span>RGIS: Retail Merchandiser</span> <span>July 2011&ndash;August 2011</span></h3>
+<p>Remodeled both Family Dollar stores and Jo-Ann Fabric and Craft stores.</p>
+
+<h3 class="leftright"><span>Boutique Week: Webmaster</span> <span>January&ndash;May 2011</span></h3>
+<p>Developing a brand-new website on a cloud platform to the client's specifications.</p>
+
+<h3 class="leftright"><span>Employment Group: Light Industrial Temp</span> <span>October 2010&ndash;Febuary 2011</span></h3>
+<p></p>
+
+<h3 class="leftright"><span>Manpower: Access Business Group Temp</span> <span>July&ndash;August 2008, June&ndash;October 2009</span></h3>
+<p></p>
+
+<h3 class="leftright"><span>WPI M.E. Department: Lab Monitor</span> <span>September 2007&ndash;April 2008</span></h3>
+<p>Attended a computer lab, alerted the appropriate people of problems, enforced rules, and ensured things ran smoothly.</p>
+
+<h2>Other Experience</h2>
+
+<h3 class="leftright"><span>School: Theatre Crew</span> <span>March&ndash;April 2008, October&ndash;November 2008</span></h3>
+<p>Involved in the backstage work of two productions. Worked under the direction of the master carpenter in construction of set and as part of the run crew under the stage manager during the show.</p>
+
+<h3 class="leftright"><span>FIRST Robotics Competition: Robot Operator</span> <span>2007 Season</span></h3>
+<p>The robot operator on team 904. Worked under stress, strategized in groups of about 6 to 9 on a changing basis, worked very closely with others.</p>
+
+<h3 class="leftright"><span>FIRST Robotics Competition: Lead Programmer</span> <span>2004&ndash;2007 Seasons</span></h3>
+<p>The sole programmer on teams 1227 (2004-2006) and 904 (2007). Involved embedded programming on a fairly restricted system under extreme time constraints.</p>
+
+<h2>Projects</h2>
+<h3 class="leftright"><span>CS 3431: Database Systems</span> <span>January&ndash;Febuary 2009</span></h3>
+<p>Worked with two other people on a web application to handle room reservations for WPI clubs and groups. It was designed as if it were to be deployed. Major software used included Git, Python, PostgreSQL, and Apache.</p>
+
+<h3 class="leftright"><span>RBE 1001: Introduction to Robotics</span> <span>September&ndash;December 2007</span></h3>
+<p>Working with two other people to build a small robot to compete against other teams à la FIRST Tech Challenge.</p>
+
+</div><!--/container-->
+</body>
 </html>
