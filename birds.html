@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Dark Side of the Bird Trade</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+        <style>
+        html {
+            background: black;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background: url('background.jpg') no-repeat;
+            width: 1024px;
+            height: 684px; /*724-42*2*/
+            left: auto;
+            right: auto;
+            margin: 0 auto;
+            padding: 0;
+            padding: 42px 18px;
+        }
+        #factoids, #youcanhelp {
+            position: absolute;
+            width: 1024px;
+        }
+        #youcanhelp {
+            display: none;
+        }
+        #darkside {
+            display: block;
+            margin: 0 auto;
+            margin-top: 35px;
+        }
+        #facts {
+            overflow: hidden;
+            white-space: nowrap;
+            margin-top: 5px;
+        }
+        #facts > * {
+            width: 1024px;
+            display: none;
+            position: absolute;
+        }
+        #facts > * > * {
+            vertical-align: top;
+        }
+        .back, .forward {
+            width: 41px;
+            cursor: pointer;
+        }
+        #facts .back, #facts .forward {
+            margin-top: 72px;
+        }
+        #slide3 .forward{
+            width: 60px;
+            margin-top: 61px;
+        }
+        #facts .fact {
+            margin-left: 40px;
+            margin-right: 33px;
+        }
+        #slide2 .fact {
+            margin-top: -6px;
+        }
+        #slide3 .fact {
+            margin-right: 22px;
+        }
+        
+        #youcanhelp {
+            padding-top: 35px;
+        }
+        #youcanhelp * {
+            vertical-align: middle;
+        }
+        span.back, span.forward {
+            display: inline-block;
+            cursor: auto;
+            width: 41px;
+        }
+        </style>
+        <script>
+SPEED = "fold";
+$(function() {
+        $("#slide1 .forward").click(function() {
+            $("#slide1").fadeOut(SPEED);
+            $("#slide2").fadeIn(SPEED);
+        });
+        $("#slide2 .back").click(function() {
+            $("#slide2").fadeOut(SPEED);
+            $("#slide1").fadeIn(SPEED);
+        });
+        $("#slide2 .forward").click(function() {
+            $("#slide2").fadeOut(SPEED);
+            $("#slide3").fadeIn(SPEED);
+        });
+        $("#slide3 .back").click(function() {
+            $("#slide3").fadeOut(SPEED);
+            $("#slide2").fadeIn(SPEED);
+        });
+        $("#slide3 .forward").click(function() {
+            $("#factoids").fadeOut(SPEED);
+            $("#youcanhelp").fadeIn(SPEED);
+        });
+        $("#youcanhelp .back").click(function() {
+            $("#youcanhelp").fadeOut(SPEED);
+            $("#factoids").fadeIn(SPEED);
+        });
+        $("#slide1").show();
+});
+        </script>
+    </head>
+    <body>
+        <div id="factoids">
+            <img id="darkside" src="darkside.png">
+            <div id="facts">
+                <div id="slide1">
+                    <span class="back" width="41px" height="89px"></span>
+                    <img class="fact" src="slide1.png">
+                    <img class="forward" src="forward.png">
+                </div>
+                <div id="slide2">
+                    <img class="back" src="back.png">
+                    <img class="fact" src="slide2.png">
+                    <img class="forward" src="forward.png">
+                </div>
+                <div id="slide3">
+                    <img class="back" src="back.png">
+                    <img class="fact" src="slide3.png">
+                    <img class="forward" src="forward-help.png">
+                </div>
+            </div>
+        </div>
+        <div id="youcanhelp">
+            <img class="back" src="back.png">
+            <img id="help" src="youcanhelp.png">
+            <span class="forward" width="41px" height="89px">
+        </div>
+    </body>
+</html>
