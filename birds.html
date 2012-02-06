@@ -12,7 +12,7 @@
         }
         body {
             background: url('background.jpg') no-repeat;
-            width: 1024px;
+            width: 988px; /*1024-18*2*/
             height: 684px; /*724-42*2*/
             left: auto;
             right: auto;
@@ -29,7 +29,7 @@
         }
         #darkside {
             display: block;
-            margin: 0 auto;
+            margin-left: 35px;
             margin-top: 35px;
         }
         #facts {
@@ -47,6 +47,7 @@
         }
         .back, .forward {
             width: 41px;
+            height: 89px;
             cursor: pointer;
         }
         #facts .back, #facts .forward {
@@ -54,6 +55,7 @@
         }
         #slide3 .forward{
             width: 60px;
+            height: 130px;
             margin-top: 61px;
         }
         #facts .fact {
@@ -73,10 +75,16 @@
         #youcanhelp * {
             vertical-align: middle;
         }
-        span.back, span.forward {
+        #youcanhelp .back {
+            margin-top: 100px;
+        }
+        #help {
+            margin-top: 2px;
+            margin-left: -20px;
+        }
+        span.back, span.forward { /* Filler for alignment */
             display: inline-block;
             cursor: auto;
-            width: 41px;
         }
         </style>
         <script>
@@ -115,7 +123,8 @@ $(function() {
             <img id="darkside" src="darkside.png">
             <div id="facts">
                 <div id="slide1">
-                    <span class="back" width="41px" height="89px"></span>
+                    <span class="back"
+                    ></span>
                     <img class="fact" src="slide1.png">
                     <img class="forward" src="forward.png">
                 </div>
@@ -134,7 +143,7 @@ $(function() {
         <div id="youcanhelp">
             <img class="back" src="back.png">
             <img id="help" src="youcanhelp.png">
-            <span class="forward" width="41px" height="89px">
+            <span class="forward"></span>
         </div>
     </body>
 </html>
