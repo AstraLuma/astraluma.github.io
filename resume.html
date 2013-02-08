@@ -4,7 +4,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<title>R&#xE9;sum&#xE9;</title>
+<title>Resume</title>
 
 <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css">
 <style type="text/css">
@@ -65,21 +65,21 @@ table.leftright td:last-child {
 	text-align: right;
 }
 
-h3.leftright {
+*.leftright {
 /*	display: table-row;*/
-	width: 700px;/*Dependant on #container*/
+	width: 640px;/*Dependant on #container*/
 }
 
-h3.leftright > span {
+*.leftright > span {
 	display: table-cell;
 	width: 350px;/*Dependant on #container*/
 }
 
-h3.leftright > span:last-child {
+*.leftright > span:last-child {
 	text-align: right;
 }
 
-.crap h3 {
+.crap h4 {
 	font-size: 80%;
 }
 
@@ -93,7 +93,7 @@ h3.leftright > span:last-child {
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.0/jquery-ui.min.js"></script>
     <script>
 $(function() {
-	var toc = $("<ul></ul>");
+	var toc = $("<ul style='height: 2.4em;'></ul>");
 	$("#tabs").prepend(toc);
 	
 	$("h2").each(function(_, dome) {
