@@ -6,7 +6,7 @@
 
 <title>Resume</title>
 
-<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.0/themes/base/jquery-ui.css" media="screen">
 <style type="text/css">
 body {
 	margin-top: 1.0em;
@@ -96,6 +96,15 @@ h3 ~ p:not(.nogap), h4 ~ p:not(.nogap) {
 #tabs {
 	clear: both;
 }
+
+#portfolio .extra {
+	display: none;
+}
+
+#showmore-p {
+	float: right;
+	margin-left: 1em;
+}
 </style>
 
   
@@ -106,7 +115,7 @@ $(function() {
 	var toc = $("<ul style='height: 2.4em;'></ul>");
 	$("#tabs").prepend(toc);
 	
-	$("h2").each(function(_, dome) {
+	$(".tab h2").each(function(_, dome) {
 		var h2 = $(dome);
 		var label = h2.text();
 		var id = h2.parent().attr("id");
@@ -118,6 +127,19 @@ $(function() {
 		toc.append(li);
 	});
 	$("#tabs").tabs();
+	
+	var showmorep = true;
+	$("#showmore-p").click(function () {
+		if (showmorep) {
+			$("#portfolio .extra").show("slow");
+			$("#showmore-p").text("Less");
+			showmorep = false;
+		} else {
+			$("#portfolio .extra").hide("slow");
+			$("#showmore-p").text("More");
+			showmorep = true;
+		}
+	});
 });
     </script>
 </head>
@@ -144,19 +166,21 @@ my long-term career prospects.</p>
 
 <div id="tabs">
 
-<div id="portfolio">
+<div id="portfolio" class="tab">
 	<h2>Portfolio</h2>
+	<button id="showmore-p">More</button>
+
 	<p>I first began programming over 10 years ago. Since then, I have become 
 	fluent in a variety of languages and technologies. Here is a collection of 
 	my work.</p>
-
+	
 	<h3>Minecraft server plugins (Java)</h3>
-	<p>Working in a high-performance environment with a relatively large amount 
+	<p>Working in a high performance environment with a relatively large amount 
 	of data, within a diverse and dynamic ecosystem.</p>
 
 	<h3>GroupLink Watcher (JavaScript, HTML, CSS, Chrome)</h3>
 	<p>A Chrome extension to help me keep an eye on the ticket pool. Connected 
-	to an undocumented JSON endpoint in the web-based software.</p>
+	to an undocumented JSON endpoint in the web based software.</p>
 	<p><a href="https://github.com/astronouth7303/grouplink-watcher-crx">GitHub</a></p>
 	
 	<h3>BoutiqueWeek (Python, Google App Engine)</h3>
@@ -170,7 +194,7 @@ my long-term career prospects.</p>
 	<p><a href="https://github.com/astronouth7303/pyinput">GitHub</a></p>
 
 	<h3>BotSteve (Python)</h3>
-	<p>An IRC bot I contributed to. Wrote a file-based datastore and
+	<p>An IRC bot. Wrote a file based datastore and
 	connected the bot to Freenode's services.</p>
 	<p><a href="https://github.com/astronouth7303/tgg-BotSteve">GitHub</a></p>
 
@@ -178,28 +202,39 @@ my long-term career prospects.</p>
 	<p>A tool to generate IRC statistics. Used a CouchDB document store and 
 	used Map/Reduce queries to generate the statistics.</p>
 	<p><a href="https://github.com/astronouth7303/tisc">GitHub</a></p>
+	
+	<div class="extra">
+		<h3>Cropper (Python, GTK)</h3>
+		<p>A GUI tool to slice up images. Had to balance attractive interfaces and 
+		ease of use against features and internal complexity.</p>
+		<p><a href="http://astro73.com/cropper">Website</a> &bull; <a href="https://github.com/astronouth7303/cropper">GitHub</a></p>
+	</div>
+	
+	<div class="extra">
+		<h3>SubIM (Python, GTK)</h3>
+		<p>A small chat client based on IP multicasting. Simple interface, minimum 
+		infrastructure, and effective.</p>
+		<p><a href="https://github.com/astronouth7303/subim">GitHub</a></p>
 
-	<h3>Cropper (Python, GTK)</h3>
-	<p>A GUI tool to slice up images. Had to balance attractive interfaces and 
-	ease of use against features and internal complexity.</p>
-	<p><a href="http://astro73.com/cropper">Website</a> &bull; <a href="https://github.com/astronouth7303/cropper">GitHub</a></p>
-
-	<h3>SubIM (Python, GTK)</h3>
-	<p>A small chatroom based on IP multicasting. Simple interface, minimum 
-	infrastructure, and effective.</p>
-	<p><a href="https://github.com/astronouth7303/subim">GitHub</a></p>
-
-	<!--h3>ResTracker (Python, HTML, PostgreSQL)</h3>
-	<p>For a databases class. Worked with two other people on a web application to handle room reservations for WPI clubs and groups. It was designed as if it were to be deployed.</p>
-	<p><a href="https://github.com/astronouth7303/restracker">GitHub</a></p-->
-
-	<!--h3>PyReg (Python)</h3>
-	<p>A library to ease access to the Windows registry from Python</p>
-	<p><a href="https://github.com/astronouth7303/pyreg">GitHub</a></p-->
-
+	</div>
+	
+	<div class="extra">
+		<h3>ResTracker (Python, HTML, PostgreSQL)</h3>
+		<p>For a databases class. Worked with two other people on a web 
+		application to handle room reservations. Wrote a web framework and used
+		PostgreSQL.</p>
+		<p><a href="https://github.com/astronouth7303/restracker">GitHub</a></p>
+	</div>
+	
+	<div class="extra">
+		<h3>PyReg (Python)</h3>
+		<p>Connects Python to the Windows registry. Wrapped a handle-based API 
+		within an object-oriented one.</p>
+		<p><a href="https://github.com/astronouth7303/pyreg">GitHub</a></p>
+	</div>
 </div>
 
-<div id="techs">
+<div id="techs" class="tab">
 	<h2>Technologies</h2>
 	<p>I have many skills in a wide array of applications, from embedded work to 
 	full websites. Below are listed a selection of the particulars.</p>
@@ -276,7 +311,7 @@ my long-term career prospects.</p>
 	</ul>
 </div>
 
-<div id="work-school">
+<div id="work-school" class="tab">
 	<h2>Work &amp; School</h2>
 
 	<h3>Education</h3>
