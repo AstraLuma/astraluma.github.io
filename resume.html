@@ -140,6 +140,19 @@ $(function() {
 			showmorep = true;
 		}
 	});
+
+	var showmoret = true;
+	$("#showmore-t").click(function () {
+		if (showmorep) {
+			$("#techs .extra").show("slow");
+			$("#showmore-t").text("Less");
+			showmoret = false;
+		} else {
+			$("#techs .extra").hide("slow");
+			$("#showmore-t").text("More");
+			showmoret = true;
+		}
+	});
 });
     </script>
 </head>
@@ -236,6 +249,8 @@ my long-term career prospects.</p>
 
 <div id="techs" class="tab">
 	<h2>Technologies</h2>
+	<!--button id="showmore-t">More</button-->
+	
 	<p>I have many skills in a wide array of applications, from embedded work to 
 	full websites. Below are listed a selection of the particulars.</p>
 
@@ -261,9 +276,9 @@ my long-term career prospects.</p>
 	<h3>PHP</h3>
 	<p>Have used PHP since version 4, including several large pieces of software.</p>
 	<ul>
-		<li>MediaWiki: I have run instances to, contributed patches to, and have 
+		<li>MediaWiki: Have run instances to, contributed patches to, and have 
 		made deep changes to MediaWiki, the software behind Wikipedia.</li>
-		<li>WordPress: I have administered and integrated with WordPress instances</li>
+		<li>WordPress: Have administered and integrated with WordPress installations</li>
 	</ul>
 
 	<h3>Databases</h3>
@@ -278,7 +293,7 @@ my long-term career prospects.</p>
 	</ul>
 
 	<h3>Other Web</h3>
-	<p>I write the HTML and CSS in my web projects.</p>
+	<p>All the HTML and CSS in my work is custom-tailored.</p>
 	<ul>
 		<li>HTML5, including new tags and new technologies</li>
 		<li>CSS3</li>
@@ -289,17 +304,16 @@ my long-term career prospects.</p>
 	<p>Programmed in both Microchip's PIC C for the PIC18 series and for the MSP430 
 	in embedded applications.</p>
 	<ul>
-		<li>PIC C: Lead programmer for 4 years to develop robotics control software 
-		in FIRST Robotics Competition.</li>
+		<li>PIC C: Lead programmer to develop robotics control software.</li>
 	</ul>
 
 	<h3>Others</h3>
-	<p>There are a variety of other languages I have used, either to a lesser degree 
-	or that are lesser known. This includes Java, desktop C/C++, Scheme, Ruby, Perl, 
-	NQC, Visual Basic 6, Lua, Bash, Powershell, and C#.</p>
+	<p>Not listed above are a variety of technologies that are lesser known or, 
+	that I am less familiar with. This includes Java, desktop C/C++, Scheme, 
+	Ruby, Perl, NQC, Visual Basic 6, Lua, Bash, Powershell, and C#.</p>
 
-	<p>I am also familiar with several of the associated tools that are not strictly 
-	programming but are a necessary part of the process.</p>
+	<p>Familiar with several of the associated tools that are not programming 
+	but are a necessary part of the development process.</p>
 	<ul>
 		<li>GNU Make</li>
 		<li>git: a distributed version-control system</li>
@@ -307,7 +321,6 @@ my long-term career prospects.</p>
 		<li>CVS: similar to Subversion</li>
 		<li>SWIG: A bindings generator</li>
 		<li>Debian software packaging</li>
-	
 	</ul>
 </div>
 
