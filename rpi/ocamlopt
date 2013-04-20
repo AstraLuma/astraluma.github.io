@@ -1,0 +1,24 @@
+#!/usr/bin/python
+import sys, os
+
+EXT_MAP = {
+	'.cmxa': '.cma',
+	'.cmx': '.cmo'
+}
+
+files = []
+def mapFile(fn):
+	for n,b in EXT_MAP.items():
+		if fn.endswith(n):
+			files.append(fn)
+			return fn[:-len(n)]+b
+	else:
+		return fn
+
+args = ['ocamlc']
+if '-o' in sys.argv:
+	args += ['-custom']
+args += map(mapFile, sys.argv[1:])
+
+#print ' '.join(args)
+os.execv('/usr/bin/ocamlc', args)

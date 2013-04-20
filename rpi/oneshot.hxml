@@ -1,0 +1,10 @@
+-D macro-times
+-debug
+-cp ..
+-resource res1.txt
+-resource res2.bin
+--no-opt
+-dce full
+-D neko_v2
+-main unit.Test
+-neko unit.n
