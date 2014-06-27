@@ -92,6 +92,7 @@ take advantage of load balancing compute fabric.
 
 ### On Connection (Unix, FIFO)
 The inode stores a reference to the listening (parent/template) PID.
+
 1. Client process creates an FD
 2. Client node sends the FD to the parent node
 3. Parent node forks the template process
@@ -100,6 +101,7 @@ The inode stores a reference to the listening (parent/template) PID.
 Filesystem
 ==========
 This is largely undetermined.
+
 * Storage fabric and compute fabric same hardware?
 * Storage fabric is basically SAN
 * Contains real files, directories, and data required to make connections (Unix, FIFO)
@@ -109,6 +111,7 @@ This is largely undetermined.
 Workstations
 ============
 Graphical workstations can work in this context.
+
 * A process holding certain kinds of FDs (eg, Wayland with open DRI hardware) 
   makes it unmovable (ie it is tied to the node)
 * A process connected to an unmovable process is weighted against moving away from the node (eg, graphical apps)
@@ -116,6 +119,7 @@ Graphical workstations can work in this context.
 * VT works similarly: init ties terminal FD to login process
 
 I haven't figured out how display/login managers get local hardware FDs.
+
 * `/dev/node/*` ? Probably has some pretty big security concerns.
 
 Databases
