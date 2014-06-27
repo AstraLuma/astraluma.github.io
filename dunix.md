@@ -1,5 +1,6 @@
-Distributed Unix
-================
+---
+title: Distributed Unix
+---
 
 Goal: Provide POSIX-compatible system distributable across thousands of 
 machines.
