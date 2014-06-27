@@ -1,5 +1,6 @@
 ---
 title: Distributed Unix
+layout: basic
 ---
 
 Goal
