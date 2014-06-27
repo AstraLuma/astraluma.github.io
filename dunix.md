@@ -2,7 +2,9 @@
 title: Distributed Unix
 ---
 
-Goal: Provide POSIX-compatible system distributable across thousands of machines.
+Goal
+----
+Provide POSIX-compatible system distributable across thousands of machines.
 
 Unsolved Problems
 =================
