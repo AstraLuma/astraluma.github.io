@@ -18,7 +18,7 @@ Unsolved Problems
 * Fork latency
 * Packet (eg, UDP) daemons
 * Database daemons
-* Filesystem daemons (eg plan 9)
+* Filesystem daemons (a la plan 9)
 * Distributed file system
 * Network failure
 
