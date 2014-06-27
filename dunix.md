@@ -46,6 +46,12 @@ Each node is an independent PC (x86 or ARM based). The entire fabric is a single
 
 (Not sure if dunix should be a stand-alone operating system or a layer on top of a non-distributed kernel. I'm writing as if its a bare-metal OS, but it's feasible to adapt it to be a wine-like layer.)
 
+### CPU Features
+
+On start, a process is tagged with which CPU features it uses (eg, ARM instruction sets, x86 extensions). A process can only move to a node with a superset of its CPU features.
+
+While strictly speaking, this could allow ARM and x86 nodes to coexist on the same system, this isn't terribly practical.
+
 Node Management
 ---------------
 * Node management is Peer-to-Peer
