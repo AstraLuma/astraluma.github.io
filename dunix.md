@@ -168,5 +168,5 @@ We must also prevent two processes from ever getting the same ID.
 
 Further Reading
 ===============
-* Inferno (a distributed Plan 9-based operating system able to be used across a mixed-architecture fabric)
-* http://hdl.handle.net/10022/AC:P:11720 Paper from 1986 discussing approaches to distributed Unix
+* Inferno: Distributed Plan 9-based operating system able to be used across a mixed-architecture fabric
+* [Approaches to Distributed UNIX Systems](http://hdl.handle.net/10022/AC:P:11720): Paper from 1986 discussing approaches to distributed Unix
