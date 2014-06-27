@@ -2,8 +2,7 @@
 title: Distributed Unix
 ---
 
-Goal: Provide POSIX-compatible system distributable across thousands of 
-machines.
+Goal: Provide POSIX-compatible system distributable across thousands of machines.
 
 Unsolved Problems
 =================
@@ -12,10 +11,8 @@ Unsolved Problems
   * Files are tracked by `dev_t` and `ino_t` and so might also be very large numbers
     * Utilities use the device to namespace inodes for hardlink tracking?
     * Does POSIX allow hardlinks to span devices?
-    * Can the device of a file refer to a replication group in the global SAN, 
-      or must it refer to which SAN has the file?
-      * This could allow unreplicated filesystem sources (eg, backed by 
-        individual nodes) for eg /tmp
+    * Can the device of a file refer to a replication group in the global SAN, or must it refer to which SAN has the file?
+      * This could allow unreplicated filesystem sources (eg, backed by individual nodes) for eg /tmp
 * Fork latency
 * Packet (eg, UDP) daemons
 * Database daemons
@@ -31,8 +28,7 @@ Node Management
 ---------------
 * Node management is Peer-to-Peer
 * Each node has a list of peer nodes and maintains the status of each of its peers
-* The status information is things primarily involved in fork decisions (ie CPU 
-  load, distance to FS pieces)
+* The status information is things primarily involved in fork decisions (eg CPU load, distance to FS pieces)
 
 To Move Between Nodes
 ---------------------
@@ -56,17 +52,14 @@ On fork
 Streams
 =======
 
-Because of process shuffling, part of the fabric infrastructure is the ability 
-to move streams (File Descriptors) between machines. Various processes have FDs 
-spanning between them, which may be local to a node or between nodes.
+Because of process shuffling, part of the fabric infrastructure is the ability to move streams (File Descriptors) between machines. Various processes have FDs spanning between them, which may be local to a node or between nodes.
 
 Networking
 ==========
 * Edge routers are responsible for presenting outside open ports
 * Internal network is IPv6 (autoconf)
 
-Edge routers are psuedo-nodes: They have a list of peers but do not participate 
-in the fabric
+Edge routers are psuedo-nodes: They have a list of peers but do not participate in the fabric
 
 Stream Daemons
 --------------
@@ -77,10 +70,7 @@ Stream Daemons
 
 (Alternative: inetd)
 
-This was chosen on the assumption that fork overhead is much lower than 
-reinitialization, configuration reload, etc. A daemon has the flexibility to do 
-initialization and management (through signals) from a central process but still 
-take advantage of load balancing compute fabric.
+This was chosen on the assumption that fork overhead is much lower than reinitialization, configuration reload, etc. A daemon has the flexibility to do initialization and management (through signals) from a central process but still take advantage of load balancing compute fabric.
 
 ### On Listen
 1. Registration is sent to edge routers, which are responsible for load balancing
