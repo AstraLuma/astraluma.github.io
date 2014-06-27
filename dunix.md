@@ -6,6 +6,8 @@ Goal
 ----
 Provide POSIX-compatible system distributable across thousands of machines.
 
+Or: What if all the servers of Google were a single usable system?
+
 Unsolved Problems
 =================
 * Global numerical ID (UID, GID, INODE, PID) exhaustion
