@@ -24,6 +24,14 @@ Unsolved Problems
 * Distributed file system
 * Network failure
 
+The big problem is: How do you communicate changes in system state (eg process status) to interested nodes without swamping the entire network with status messages.
+
+Robustness and Availability
+===========================
+The overall system should be robust against node failures. IE, if a single node has an error, power failure, or catastrophic disaster, the overall system should be able to recover. The particular resources (hardware, processes) backed by that node may become unavailable, but it should not cascade to a system crash.
+
+The file system should replicated so that _n_ node failures do not prevent resource access. In particular, virtual inodeds (devices, sockets, FIFOs) should never be lost, given their tendency to be critical to system operation. VFS mounts are backed by daemons, so their availability is tied to the robustness of the daemon.
+
 Compute Fabric
 ==============
 The unit of computation is the process. Fabric does not recognize threads.
@@ -112,6 +120,8 @@ This is largely undetermined.
 * Contains real files, directories, and data required to make connections (Unix, FIFO)
 * If following plan 9, daemons may implement VFS.
   * This is actually very problematic based on forking model of daemons
+* Full ACLs (MAC) and real locks are probably a requirement
+* Is eventual consistency allowable in the file system?
 
 Workstations
 ============
@@ -125,7 +135,7 @@ Graphical workstations can work in this context.
 
 I haven't figured out how display/login managers get local hardware FDs.
 
-* `/dev/node/*` ? Probably has some pretty big security concerns.
+* `/dev/node/*`? Probably has some pretty big security concerns.
 
 Databases
 =========
@@ -133,6 +143,28 @@ Databases
 * No idea how to rectify.
 * Real filesystem locks may help? (Possible as long as process death releases lock)
 * Ideally, databases map to filesystem (eg, plan 9), but querying is not a thing in this model?
+
+
+Numeric Identifiers
+===================
+
+uid_t and gid_t
+---------------
+32-bit numbers are likely sufficient. I believe that 4 billion groups or users are unlikely to be found on a single system.
+
+dev_t
+-----
+This is used to identify both node devices (keyboards, displays, etc) and file sources (disk drives, storage clusters). Therefore, it will likely need to be a structured number including if it's a real or virtual device, the node providing it (real only), and some other identifiers.
+
+The idea of major and minor device numbers are all but lost in this system.
+
+pid_t
+-----
+A process is only on one node at a time. It may be useful assign an 'authoritive' node (probably the origin) to the process and encode it in the PID. However, this requires the node to always service the process, even if it has given it to another node. It may also act as a bottle neck and in the event of failure, cause the process to be orphaned and lost.
+
+However, we do not want every node tracking every process, either.
+
+We must also prevent two processes from ever getting the same ID.
 
 Further Reading
 ===============
