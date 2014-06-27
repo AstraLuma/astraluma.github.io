@@ -63,6 +63,13 @@ To Move Between Nodes
 
 Processes may move arbitrarily between nodes, depending on load, file system concerns, etc.
 
+Unmovable Processes
+-------------------
+* Direct FD to local hardware
+* Shared memory with any other process
+
+(mmap() to files is pretty difficult with distributed FS.)
+
 On fork
 -------
 1. Fork locally
