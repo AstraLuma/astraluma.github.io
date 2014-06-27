@@ -26,6 +26,16 @@ Compute Fabric
 ==============
 The unit of computation is the process. Fabric does not recognize threads.
 
+Hardware
+--------
+The compute fabric is made of a series of nodes sharing a LAN.
+
+Each node is an independent PC (x86 or ARM based). The entire fabric is a single architecture.
+
+(Should differing processor features be allowed? Is it feasible to move a process from a processor with less features to a processor with more?)
+
+(Not sure if dunix should be a stand-alone operating system or a layer on top of a non-distributed kernel. I'm writing as if its a bare-metal OS, but it's feasible to adapt it to be a wine-like layer.)
+
 Node Management
 ---------------
 * Node management is Peer-to-Peer
@@ -121,3 +131,8 @@ Databases
 * No idea how to rectify.
 * Real filesystem locks may help? (Possible as long as process death releases lock)
 * Ideally, databases map to filesystem (eg, plan 9), but querying is not a thing in this model?
+
+Further Reading
+===============
+* Inferno (a distributed Plan 9-based operating system able to be used across a mixed-architecture fabric)
+* http://hdl.handle.net/10022/AC:P:11720 Paper from 1986 discussing approaches to distributed Unix
