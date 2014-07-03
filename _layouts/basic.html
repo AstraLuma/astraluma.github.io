@@ -10,15 +10,18 @@
         float: left;
         margin-right: 0.5em;
       }
+      header h1 {
+        text-align: center;
+      }
     </style>
   </head>
   <body>
     <header>
       <div id="backlink"><a href="/">« Back to Index</a></div>
-      <h1>{{page.title}}</h1>
       {% if page.source %}
       <div id="sourcelink"><a href="{{page.source}}">View Source</a></div>
       {% endif %}
+      <h1>{{page.title}}</h1>
     </header>
     <article>
       {{content}}
