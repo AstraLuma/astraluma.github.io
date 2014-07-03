@@ -13,10 +13,15 @@
     </style>
   </head>
   <body>
-    <div id="backlink"><a href="/">« Back to Index</a></div>
-    {% if page.source %}
-    <div id="sourcelink"><a href="{{page.source}}">View Source</a></div>
-    {% endif %}
-    {{content}}
+    <header>
+      <div id="backlink"><a href="/">« Back to Index</a></div>
+      <h1>{{page.title}}</h1>
+      {% if page.source %}
+      <div id="sourcelink"><a href="{{page.source}}">View Source</a></div>
+      {% endif %}
+    </header>
+    <article>
+      {{content}}
+    </article>
   </body>
 </html>
