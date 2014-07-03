@@ -1,6 +1,7 @@
 ---
 title: Distributed Unix
 layout: basic
+source: https://github.com/astronouth7303/astronouth7303.github.com/blob/master/dunix.md
 ---
 
 Goal
