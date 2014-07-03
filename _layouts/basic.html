@@ -6,9 +6,14 @@
       #sourcelink {
         float: right;
       }
+      #backlink {
+        float: left;
+        margin-right: 0.5em;
+      }
     </style>
   </head>
   <body>
+    <div id="backlink"><a href="/">« Back to Index</a></div>
     {% if page.source %}
     <div id="sourcelink"><a href="{{page.source}}">View Source</a></div>
     {% endif %}
