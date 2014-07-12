@@ -83,10 +83,12 @@ Processes may move arbitrarily between nodes, depending on load, file system con
 
 Unmovable Processes
 -------------------
-* Direct FD to local hardware
+* Direct FD to certain local hardware
 * Shared memory with any other process
 
 (mmap() to files is pretty difficult with distributed FS.)
+
+FIXME: Which devices affect process movement? Can certain device handles be swapped between actual nodes (eg, GPUs)?
 
 On fork
 -------
@@ -103,10 +105,13 @@ Because of process shuffling, part of the fabric infrastructure is the ability t
 
 Networking
 ==========
-* Edge routers are responsible for presenting outside open ports
 * Internal network is IPv6 (autoconf)
+* Nodes with external-facing network ports manage the low-level network stack
+* Network interfaces are exposed over the same device-sharing mechanisms used for other things.
+  * Indexed by IP address or some kind of symbolic name
+* Node load should include device management overhead, so if a node is loaded down with network management, it is unlikely to get processes
 
-Edge routers are psuedo-nodes: They have a list of peers but do not participate in the fabric
+(Alternative: Dedicated edge routers)
 
 Stream Daemons
 --------------
@@ -135,6 +140,11 @@ The inode stores a reference to the listening (parent/template) PID.
 2. Client node sends the FD to the parent node
 3. Parent node forks the template process
 4. Child process resumes from listen call, receiving the connection FD
+
+
+### Scaling
+* On listen(), secondary "warm" processes are pre-forked in the background, ready to accept a connection
+* Exact behavior is a policy of some sort.
 
 Filesystem
 ==========
