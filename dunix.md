@@ -10,6 +10,8 @@ Provide POSIX-compatible system distributable across thousands of machines.
 
 Or: What if all the servers of Google were a single usable system?
 
+Or: Timesharing in the cloud
+
 Unsolved Problems
 =================
 * Global numerical ID (UID, GID, INODE, PID) exhaustion
@@ -53,6 +55,14 @@ Each node is an independent PC (x86 or ARM based). The entire fabric is a single
 On start, a process is tagged with which CPU features it uses (eg, ARM instruction sets, x86 extensions). A process can only move to a node with a superset of its CPU features.
 
 While strictly speaking, this could allow ARM and x86 nodes to coexist on the same system, this isn't terribly practical.
+
+This is stored in a bitfield, with options like:
+
+* x86_32
+* x86_64
+* x86_SSE3
+* arm_thumb
+* arm_thumb2
 
 Node Management
 ---------------
@@ -137,6 +147,11 @@ This is largely undetermined.
   * This is actually very problematic based on forking model of daemons
 * Full ACLs (MAC) and real locks are probably a requirement
 * Is eventual consistency allowable in the file system?
+
+### Managment Goals
+* Probabalistically, files are near nodes that use them (eg, a workstation has a copy of the home directory of its user)
+* Determinisically, files are replicated to mount point parameters (eg, /home is replicated 3 times, /tmp none)
+
 
 Workstations
 ============
