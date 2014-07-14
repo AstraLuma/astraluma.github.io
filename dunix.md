@@ -156,12 +156,27 @@ This is largely undetermined.
 * If following plan 9, daemons may implement VFS.
   * This is actually very problematic based on forking model of daemons
 * Full ACLs (MAC) and real locks are probably a requirement
-* Is eventual consistency allowable in the file system?
+* Track file versions
+* Extended attributes important, likely used for management purposes
 
-### Managment Goals
+Managment Goals
+---------------
 * Probabalistically, files are near nodes that use them (eg, a workstation has a copy of the home directory of its user)
 * Determinisically, files are replicated to mount point parameters (eg, /home is replicated 3 times, /tmp none)
 
+`net0`
+------
+A prototype filesystem based for small clusters. It's layered on top of a traditional disk FS.
+
+* Each file is stored on the node running the process that created it
+* No replication
+* Devices kept by the node that backs it
+
+### On Open
+* Check local filesystem
+* If not there, broadcast request to fabric
+* If no response, assume not there
+* If found, open network stream to file
 
 Workstations
 ============
@@ -210,3 +225,9 @@ Further Reading
 ===============
 * Inferno: Distributed Plan 9-based operating system able to be used across a mixed-architecture fabric
 * [Approaches to Distributed UNIX Systems](http://hdl.handle.net/10022/AC:P:11720): Paper from 1986 discussing approaches to distributed Unix
+
+To Do & Ideas
+=============
+* How Beowulf does compute fabric and its properties
+* BeOS/Haiku: Using user space processes to perform kernel functions?
+* Protocol Buffers: provides semi-descriptive wire format
