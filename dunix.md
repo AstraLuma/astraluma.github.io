@@ -231,3 +231,4 @@ To Do & Ideas
 * How Beowulf does compute fabric and its properties
 * BeOS/Haiku: Using user space processes to perform kernel functions?
 * Protocol Buffers: provides semi-descriptive wire format
+* Hadoop
