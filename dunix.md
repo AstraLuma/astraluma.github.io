@@ -12,6 +12,13 @@ Or: What if all the servers of Google were a single usable system?
 
 Or: Timesharing in the cloud
 
+* Hardware failure will occur. Persistent data is replicated and fabric is adaptable
+ * Autoconfigure and autodiscovery of fabric
+* No bottlenecks. Avoid master-slave configurations, and mitigate when unavoidable
+* Be able to compile as much real software as possible with little-to-no modification
+* Every shell script and program is load balanced and distributed
+ * All you need to do to distribute work is to open some pipes and `fork()`
+
 Unsolved Problems
 =================
 * Global numerical ID (UID, GID, INODE, PID) exhaustion
@@ -230,6 +237,10 @@ To Do & Ideas
 =============
 * How Beowulf does compute fabric and its properties
 * BeOS/Haiku: Using user space processes to perform kernel functions?
-* Protocol Buffers: provides semi-descriptive wire format
+* Protocol Buffers: provides semi-descriptive wire format, for prescribed data structures
+* BSON for open-ended data structures?
 * Hadoop
-* [Idea]Loveseat: Key-Document DB which stores the documents on the filesystem and uses a daemon to perform map-reduce indexing
+* Loveseat: Key-Document DB which stores the documents on the filesystem and uses a daemon to perform map-reduce indexing
+* Pipeline shell: A shell that, instead of processing data strictly sequentially, is able to break up the work and scale it out
+ * Idea of a "multi-pipe", where data can be distributed to any number of recipients?
+ * Is it possible to multi-pipe transparently?
