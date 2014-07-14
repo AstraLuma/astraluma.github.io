@@ -232,3 +232,4 @@ To Do & Ideas
 * BeOS/Haiku: Using user space processes to perform kernel functions?
 * Protocol Buffers: provides semi-descriptive wire format
 * Hadoop
+* [Idea]Loveseat: Key-Document DB which stores the documents on the filesystem and uses a daemon to perform map-reduce indexing
