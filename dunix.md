@@ -237,6 +237,7 @@ To Do & Ideas
 =============
 * How Beowulf does compute fabric and its properties
 * BeOS/Haiku: Using user space processes to perform kernel functions?
+ * Could also be use for services that depend on storage semantics (eg, databases) or network semantics (eg, UDP)
 * Protocol Buffers: provides semi-descriptive wire format, for prescribed data structures
 * BSON for open-ended data structures?
 * Hadoop
