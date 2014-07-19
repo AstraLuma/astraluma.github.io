@@ -4,68 +4,26 @@
   <meta charset='utf-8'>
 
   <title>astro73.com</title>
-  <meta name=viewport content="width=device-width, initial-scale=1">
+  <meta name=viewport content="width=device-width, initial-scale=1, user-scalable=yes">
   <link rel="icon" href="/favicon.ico">
+  <script src="/components/platform/platform.js"></script>
+  <link rel="import" href="/components/font-roboto/roboto.html">
+  <link rel="import" href="/components/core-header-panel/core-header-panel.html">
+  <link rel="import" href="/components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="/components/paper-tabs/paper-tabs.html">
 
   <style type="text/css">
-	body {
-		margin-top: 1.0em;
-		background-color: #FFF;
-		font-family: Helvetica, Arial, FreeSans, san-serif;
-		color: #000000;
-	}
-	#container {
-		margin: 0 auto;
-		max-width: 700px;
-/*		display: table-row;*/
-	}
-	@media (min-width: 700px) {
-		#github, #portfolio {
-			display: table-cell;
-			width: 50%;
-			margin: 1em;
-			padding: 1em;
-		}
-	}
-	h1 { 
-		font-size: 3.8em; 
-		color: #000; 
-		margin-bottom: 3px;
-		text-align: center; 
-	}
-	h1 .small { font-size: 0.4em; }
-	h1 a { text-decoration: none }
-	h2 { font-size: 1.5em; color: #000; }
-	h3 { text-align: center; color: #000; }
-	a { color: #000; }
-	pre { background: #000; color: silver; padding: 15px;}
-	hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-	
-	footer, .portfolio { 
-		text-align:center; 
-		padding-top:30px; 
-		font-style: italic; 
-	}
-	
-	.portfolio {
-		font-size: larger;
-	}
-	
-	#github dt > img {
-		float: right;
-	}
-	.more {
-	    font-style: oblique;
-	}
   </style>
 </head>
 
-<body>
+<body unresolved touch-action="auto">
   <a href="http://github.com/astronouth7303"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
-<header>
-	<h1>astro73.com: James Bliss</h1>
-</header>	
-<div id="container">
+  <core-header-panel>
+  	<core-toolbar>
+		<header>
+			<h1>astro73.com: James Bliss</h1>
+		</header>
+	</core-toolbar>
 	<div id="top">
 		<p>I am a programmer of a great many platforms. I started with VB6 in middle school and haven't stopped 
 		coding since. Below is a selection of my projects.</p>
@@ -116,7 +74,7 @@
 	<footer>
 	  <a href="https://twitter.com/astronouth7303"><img src="/twitter.png" alt="Twitter"></a>
 	</footer>
-</div>
+</core-header-panel>
 
   <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
@@ -127,11 +85,5 @@ try {
 var pageTracker = _gat._getTracker("UA-804290-1");
 pageTracker._trackPageview();
 } catch(err) {}</script>
-<!--[if !(lte IE 8)]><!--> 
-   <script type="text/javascript"> 
-     (function(){var e=document.createElement("script");e.type="text/javascript";e.async=true;e.src=document.location.protocol+"//d1agz031tafz8n.cloudfront.net/thedaywefightback.js/widget.min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})()
-   </script>
-<!--<![endif]-->
-
 </body>
 </html>
