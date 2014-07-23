@@ -66,20 +66,20 @@
 	<core-drawer-panel>
 		<div drawer>
 			<paper-shadow z="1"></paper-shadow>
+			<!-- FIXME: core-item doesn't do ripple and paper-item doesn't do links -->
 			<h1>James Bliss</h1>
 			<core-item icon="book" label="Index"><a href="/"></a></core-item>
 			<core-item icon="account-box" label="Portfolio"><a href="/resume.html"></a></core-item>
 			<h2>Pages</h2>
-			<core-item icon="" label="DUNIX"><a href="/dunix.html"></a></core-item>
+			<core-item icon="cloud" label="DUNIX"><a href="/dunix.html"></a></core-item>
 			<h2>Other Places</h2>
-			<core-item src="/images/github-black-small.svg" label="Github"><a href="https://github.com/astronouth7303"></a></core-item>
-			<core-item icon="twitter" label="Twitter"><a href="https://twitter.com/astronouth7303"></a></core-item>
+			<paper-item src="/images/github-black-small.svg" label="Github"><a href="https://github.com/astronouth7303"></a></core-item>
+			<core-item src="/images/twitter-black.svg" label="Twitter"><a href="https://twitter.com/astronouth7303"></a></core-item>
 		</div>
 		<core-header-panel main>
 			<core-toolbar horizontal layout>
 				<paper-icon-button id="drawerbutton" icon="menu" onclick="document.querySelector('core-drawer-panel').togglePanel();"></paper-icon-button>
 				<h1 flex>Index</h1>
-				<a href="https://github.com/astronouth7303" title="Github"><img src="/images/github-black-small.svg" height=24px></a>
 			</core-toolbar>
 		</core-header-panel>
 	</core-drawer-panel>
