@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <script src="/components/platform/platform.js"></script>
   <link rel="icon" href="/favicon.ico">
+  <link rel="import" href="/components/polymer/layout.html">
   <link rel="import" href="/components/core-icons/core-icons.html">
   <link rel="import" href="/components/font-roboto/roboto.html">
   <link rel="import" href="/components/core-header-panel/core-header-panel.html">
@@ -51,7 +52,7 @@
     display: inline-block
   }
   @media (min-width: 481px) {
-    #tabs {
+    #tabs a{
       width: 200px;
     }
     .container {
@@ -68,11 +69,17 @@
 			<h1>James Bliss</h1>
 			<core-item icon="book" label="Index"><a href="/"></a></core-item>
 			<core-item icon="account-box" label="Portfolio"><a href="/resume.html"></a></core-item>
+			<h2>Pages</h2>
+			<core-item icon="" label="DUNIX"><a href="/dunix.html"></a></core-item>
+			<h2>Other Places</h2>
+			<core-item src="/images/github-black-small.svg" label="Github"><a href="https://github.com/astronouth7303"></a></core-item>
+			<core-item icon="twitter" label="Twitter"><a href="https://twitter.com/astronouth7303"></a></core-item>
 		</div>
 		<core-header-panel main>
-			<core-toolbar>
-				<h1>Index</h1>
+			<core-toolbar horizontal layout>
 				<paper-icon-button id="drawerbutton" icon="menu" onclick="document.querySelector('core-drawer-panel').togglePanel();"></paper-icon-button>
+				<h1 flex>Index</h1>
+				<a href="https://github.com/astronouth7303" title="Github"><img src="/images/github-black-small.svg" height=24px></a>
 			</core-toolbar>
 		</core-header-panel>
 	</core-drawer-panel>
