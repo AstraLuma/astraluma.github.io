@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+  <title>Webcam Test</title>
+</head>
+<body>
+<div style="text-align:center;">
+  <video id="screenshot-stream" autoplay></video>
+  <img id="screenshot">
+  <canvas id="screenshot-canvas" style="display:none;"></canvas>
+  <p><button id="screenshot-button">Take Shot</button></p>
+</div>
+<script>
+  function proGetUserMedia(constraints) {
+    return new Promise(function(resolve, reject) {
+      if (navigator.webkitGetUserMedia) {
+        navigator.webkitGetUserMedia(constraints, resolve, reject);
+      } else if (navigator.mozGetUserMedia) {
+        navigator.mozGetUserMedia(constraints, resolve, reject);
+      } else if (navigator.msGetUserMedia) {
+        navigator.msGetUserMedia(constraints, resolve, reject);
+      } else {
+        navigator.getUserMedia(constraints, resolve, reject);
+      }
+    });
+  }
+
+var video = document.querySelector('#screenshot-stream');
+var button = document.querySelector('#screenshot-button');
+var canvas = document.querySelector('#screenshot-canvas');
+var img = document.querySelector('#screenshot');
+var ctx = canvas.getContext('2d');
+var localMediaStream = null;
+
+function sizeCanvas() {
+  // video.onloadedmetadata not firing in Chrome so we have to hack.
+  // See crbug.com/110938.
+  setTimeout(function() {
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    img.height = video.videoHeight;
+    img.width = video.videoWidth;
+  }, 100);
+}
+
+function snapshot() {
+  if (localMediaStream) {
+    ctx.drawImage(video, 0, 0);
+    img.src = canvas.toDataURL('image/webp');
+  }
+}
+
+proGetUserMedia({video: true}).then(function(stream) {
+  video.src = window.URL.createObjectURL(stream);
+  localMediaStream = stream;
+  sizeCanvas();
+});
+
+video.addEventListener('click', snapshot, false);
+button.addEventListener('click', snapshot, false);
+</script>
+</body>
+</html>
