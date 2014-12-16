@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Activity Feed</title>
+		<style>
+			fieldset {
+				display: inline-block;
+				width: 45%;
+				vertical-align: top;
+			}
+			.items > * {
+				margin: 2em 0;
+			}
+			.items > * > p {
+				margin: 0;
+			}
+		</style>
+	</head>
+	<body>
+		<fieldset id="forums">
+			<legend>Forums</legend>
+			<div class="items"></div>
+		</fieldset>
+
+		<fieldset id="blog">
+			<legend>From the Blog</legend>
+			<div class="items"></div>
+		</fieldset>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		<script>
+function getFeed(url) {
+	return new Promise(function(success, fail) {
+		$.ajax({
+			// FIXME: Use the feed directly after we get CORS on it
+			url      : 'https://ajax.googleapis.com/ajax/services/feed/load?v=1.0&num=10&callback=?&q=' + encodeURIComponent(url),
+			dataType : 'json',
+			success  : success,
+			error    : fail,
+		}); 
+	});
+}
+
+getFeed("http://community.dev.divorcebuddy.co/latest.rss").then(function (data) {
+	if (data.responseData.feed && data.responseData.feed.entries) {
+		var dest = $('#forums .items');
+		$.each(data.responseData.feed.entries, function (i, e) {
+			//console.log(e);
+			dest.append($("<div>").append($(e.content)));
+		});
+	}
+});
+
+getFeed("http://blog.dev.divorcebuddy.co/?feed=rss2").then(function (data) {
+	if (data.responseData.feed && data.responseData.feed.entries) {
+		var dest = $('#blog .items');
+		$.each(data.responseData.feed.entries, function (i, e) {
+			console.log(e);
+			dest.append($("<div>").append(
+				$("<h3>").append(
+					$("<a>").attr("href", e.link).text(e.title)
+				),
+				$(e.content)
+			));
+		});
+	}
+});
+		</script>
+	</body>
+</html>
