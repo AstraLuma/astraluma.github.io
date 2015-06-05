@@ -1,0 +1,118 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module fab.shapes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong><a href="fab.html"><font color="#ffffff">fab</font></a>.shapes</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:/home/astronouth7303/src/antimony/build/sb/fab/shapes.py">/home/astronouth7303/src/antimony/build/sb/fab/shapes.py</a></font></td></tr></table>
+    <p></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="functools.html">functools</a><br>
+</td><td width="25%" valign=top><a href="math.html">math</a><br>
+</td><td width="25%" valign=top><a href="operator.html">operator</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-attract"><strong>attract</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-blend"><strong>blend</strong></a>(a, b, amount)</dt></dl>
+ <dl><dt><a name="-buffer"><strong>buffer</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-circle"><strong>circle</strong></a>(x, y, r)</dt><dd><tt>Defines&nbsp;a&nbsp;circle&nbsp;from&nbsp;a&nbsp;center&nbsp;point&nbsp;and&nbsp;radius.</tt></dd></dl>
+ <dl><dt><a name="-circle_edge"><strong>circle_edge</strong></a>(x0, y0, x1, y1)</dt><dd><tt>Defines&nbsp;a&nbsp;circle&nbsp;from&nbsp;two&nbsp;points&nbsp;on&nbsp;its&nbsp;radius.</tt></dd></dl>
+ <dl><dt><a name="-clearance"><strong>clearance</strong></a>(a, b, o)</dt></dl>
+ <dl><dt><a name="-cone"><strong>cone</strong></a>(x, y, z0, z1, r)</dt></dl>
+ <dl><dt><a name="-cube"><strong>cube</strong></a>(xmin, xmax, ymin, ymax, zmin, zmax)</dt></dl>
+ <dl><dt><a name="-cylinder"><strong>cylinder</strong></a>(x, y, zmin, zmax, r)</dt></dl>
+ <dl><dt><a name="-cylinder_x"><strong>cylinder_x</strong></a>(xmin, xmax, y, z, r)</dt></dl>
+ <dl><dt><a name="-cylinder_y"><strong>cylinder_y</strong></a>(x, ymin, ymax, z, r)</dt></dl>
+ <dl><dt><a name="-difference"><strong>difference</strong></a>(a, b)</dt></dl>
+ <dl><dt><a name="-extrude_z"><strong>extrude_z</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-function_prefix_xy"><strong>function_prefix_xy</strong></a>(fn, xmin, xmax, ymin, ymax)</dt><dd><tt>Takes&nbsp;an&nbsp;arbitrary&nbsp;prefix&nbsp;math-string&nbsp;and&nbsp;makes&nbsp;it&nbsp;a&nbsp;function.<br>
+Returns&nbsp;the&nbsp;function&nbsp;intersected&nbsp;with&nbsp;the&nbsp;given&nbsp;bounding&nbsp;rectangle.</tt></dd></dl>
+ <dl><dt><a name="-function_prefix_xyz"><strong>function_prefix_xyz</strong></a>(fn, xmin, xmax, ymin, ymax, zmin, zmax)</dt><dd><tt>Takes&nbsp;an&nbsp;arbitrary&nbsp;prefix&nbsp;math-string&nbsp;and&nbsp;makes&nbsp;it&nbsp;a&nbsp;function.<br>
+Returns&nbsp;the&nbsp;function&nbsp;intersected&nbsp;with&nbsp;the&nbsp;given&nbsp;bounding&nbsp;cube.</tt></dd></dl>
+ <dl><dt><a name="-intersection"><strong>intersection</strong></a>(a, b)</dt></dl>
+ <dl><dt><a name="-invert"><strong>invert</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-iterate2d"><strong>iterate2d</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-iterate_polar"><strong>iterate_polar</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-loft_xy_z"><strong>loft_xy_z</strong></a>(a, b, zmin, zmax)</dt><dd><tt>Creates&nbsp;a&nbsp;blended&nbsp;loft&nbsp;between&nbsp;two&nbsp;shapes.<br>
+&nbsp;<br>
+Input&nbsp;shapes&nbsp;should&nbsp;be&nbsp;2D&nbsp;(in&nbsp;the&nbsp;XY&nbsp;plane).<br>
+The&nbsp;resulting&nbsp;loft&nbsp;will&nbsp;be&nbsp;shape&nbsp;a&nbsp;at&nbsp;zmin&nbsp;and&nbsp;b&nbsp;at&nbsp;zmax.</tt></dd></dl>
+ <dl><dt><a name="-morph"><strong>morph</strong></a>(a, b, weight)</dt><dd><tt>Morphs&nbsp;between&nbsp;two&nbsp;shapes.</tt></dd></dl>
+ <dl><dt><a name="-move"><strong>move</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-offset"><strong>offset</strong></a>(a, o)</dt><dd><tt>Assumes&nbsp;a&nbsp;linear&nbsp;distance&nbsp;field&nbsp;for&nbsp;bounds&nbsp;calculations!</tt></dd></dl>
+ <dl><dt><a name="-origin_xy"><strong>origin_xy</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-origin_xyz"><strong>origin_xyz</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-polygon_radius"><strong>polygon_radius</strong></a>(x, y, r, N)</dt><dd><tt>Makes&nbsp;a&nbsp;polygon&nbsp;with&nbsp;a&nbsp;center-to-vertex&nbsp;distance&nbsp;r<br>
+The&nbsp;polygon&nbsp;is&nbsp;oriented&nbsp;so&nbsp;that&nbsp;the&nbsp;bottom&nbsp;is&nbsp;always&nbsp;flat.</tt></dd></dl>
+ <dl><dt><a name="-preserve_color"><strong>preserve_color</strong></a>(f)</dt><dd><tt>Function&nbsp;decorator&nbsp;that&nbsp;preserves&nbsp;the&nbsp;color&nbsp;of&nbsp;the&nbsp;first&nbsp;input<br>
+(which&nbsp;is&nbsp;expected&nbsp;to&nbsp;be&nbsp;a&nbsp;fab.types.Shape)</tt></dd></dl>
+ <dl><dt><a name="-pyramid"><strong>pyramid</strong></a>(xmin, xmax, ymin, ymax, z0, z1)</dt></dl>
+ <dl><dt><a name="-recenter"><strong>recenter</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-rectangle"><strong>rectangle</strong></a>(xmin, xmax, ymin, ymax)</dt></dl>
+ <dl><dt><a name="-reflect_x"><strong>reflect_x</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-reflect_xy"><strong>reflect_xy</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-reflect_xz"><strong>reflect_xz</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-reflect_y"><strong>reflect_y</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-reflect_yz"><strong>reflect_yz</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-reflect_z"><strong>reflect_z</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-repel"><strong>repel</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-revolve_x"><strong>revolve_x</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-revolve_xy_x"><strong>revolve_xy_x</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-revolve_xy_y"><strong>revolve_xy_y</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-revolve_y"><strong>revolve_y</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-right_triangle"><strong>right_triangle</strong></a>(x, y, w, h)</dt></dl>
+ <dl><dt><a name="-rotate"><strong>rotate</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-rotate_x"><strong>rotate_x</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-rotate_y"><strong>rotate_y</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-rotate_z"><strong>rotate_z</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-rounded_cube"><strong>rounded_cube</strong></a>(xmin, xmax, ymin, ymax, zmin, zmax, r)</dt><dd><tt>Returns&nbsp;a&nbsp;cube&nbsp;with&nbsp;rounded&nbsp;corners&nbsp;and&nbsp;edges<br>
+r&nbsp;is&nbsp;a&nbsp;roundedness&nbsp;fraction&nbsp;between&nbsp;0&nbsp;(not&nbsp;rounded)<br>
+and&nbsp;1&nbsp;(completely&nbsp;rounded)</tt></dd></dl>
+ <dl><dt><a name="-rounded_rectangle"><strong>rounded_rectangle</strong></a>(xmin, xmax, ymin, ymax, r)</dt><dd><tt>Returns&nbsp;a&nbsp;rectangle&nbsp;with&nbsp;rounded&nbsp;corners.<br>
+r&nbsp;is&nbsp;a&nbsp;roundedness&nbsp;fraction&nbsp;between&nbsp;0&nbsp;(not&nbsp;rounded)<br>
+and&nbsp;1&nbsp;(completely&nbsp;rounded)</tt></dd></dl>
+ <dl><dt><a name="-scale_cos_x_y"><strong>scale_cos_x_y</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-scale_cos_xy_z"><strong>scale_cos_xy_z</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-scale_x"><strong>scale_x</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-scale_xy"><strong>scale_xy</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-scale_xyz"><strong>scale_xyz</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-scale_y"><strong>scale_y</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-scale_z"><strong>scale_z</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-scale_z_r"><strong>scale_z_r</strong></a>(part, x0, y0, z0, r0, s0, r1, s1)</dt></dl>
+ <dl><dt><a name="-set_color"><strong>set_color</strong></a>(a, r, g, b)</dt><dd><tt>Applies&nbsp;a&nbsp;given&nbsp;color&nbsp;to&nbsp;an&nbsp;input&nbsp;shape&nbsp;a&nbsp;and&nbsp;returns&nbsp;it.</tt></dd></dl>
+ <dl><dt><a name="-shear_cos_x_y"><strong>shear_cos_x_y</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-shear_cos_xy_z"><strong>shear_cos_xy_z</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-shear_x_y"><strong>shear_x_y</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-shear_x_z"><strong>shear_x_z</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-shear_xy_z"><strong>shear_xy_z</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-shell"><strong>shell</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-slot"><strong>slot</strong></a>(x, y, width, height, angle=0, chamfer=0.2)</dt></dl>
+ <dl><dt><a name="-sphere"><strong>sphere</strong></a>(x, y, z, r)</dt></dl>
+ <dl><dt><a name="-tab"><strong>tab</strong></a>(x, y, width, height, angle=0, chamfer=0.2)</dt></dl>
+ <dl><dt><a name="-taper_x_y"><strong>taper_x_y</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-taper_xy_z"><strong>taper_xy_z</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-text"><strong>text</strong></a>(text, x, y, height=1, align='LB')</dt></dl>
+ <dl><dt><a name="-torus_x"><strong>torus_x</strong></a>(x, y, z, R, r)</dt></dl>
+ <dl><dt><a name="-torus_y"><strong>torus_y</strong></a>(x, y, z, R, r)</dt></dl>
+ <dl><dt><a name="-torus_z"><strong>torus_z</strong></a>(x, y, z, R, r)</dt></dl>
+ <dl><dt><a name="-translate"><strong>translate</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-triangle"><strong>triangle</strong></a>(x0, y0, x1, y1, x2, y2)</dt><dd><tt>Defines&nbsp;a&nbsp;triangle&nbsp;from&nbsp;three&nbsp;points.</tt></dd></dl>
+ <dl><dt><a name="-twist_xy_z"><strong>twist_xy_z</strong></a> = p(s, *args, **kwargs)</dt></dl>
+ <dl><dt><a name="-union"><strong>union</strong></a>(a, b)</dt></dl>
+</td></tr></table>
+</body></html>
